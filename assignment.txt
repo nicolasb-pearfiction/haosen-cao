@@ -1,0 +1,113 @@
+Programming Assignment
+
+Write a small command line program in dotnet C# that simulates a 5 columns by 3 rows slot machine spin. You must try to write your code keeping in mind that the specifications of the maths might change often (the screen layout, the number and description of the reel sets, payouts, etc.) Here's the reels bands description:
+
+Reelset:
+- Band 1: "sym2", "sym7", "sym7", "sym1", "sym1", "sym5", "sym1", "sym4", "sym5", "sym3", "sym2", "sym3", "sym8", "sym4", "sym5", "sym2", "sym8", "sym5", "sym7", "sym2"
+- Band 2: "sym1", "sym6", "sym7", "sym6", "sym5", "sym5", "sym8", "sym5", "sym5", "sym4", "sym7", "sym2", "sym5", "sym7", "sym1", "sym5", "sym6", "sym8", "sym7", "sym6", "sym3", "sym3", "sym6", "sym7", "sym3"
+- Band 3: "sym5", "sym2", "sym7", "sym8", "sym3", "sym2", "sym6", "sym2", "sym2", "sym5", "sym3", "sym5", "sym1", "sym6", "sym3", "sym2", "sym4", "sym1", "sym6", "sym8", "sym6", "sym3", "sym4", "sym4", "sym8", "sym1", "sym7", "sym6", "sym1", "sym6"
+- Band 4: "sym2", "sym6", "sym3", "sym6", "sym8", "sym8", "sym3", "sym6", "sym8", "sym1", "sym5", "sym1", "sym6", "sym3", "sym6", "sym7", "sym2", "sym5", "sym3", "sym6", "sym8", "sym4", "sym1", "sym5", "sym7"
+- Band 5: "sym7", "sym8", "sym2", "sym3", "sym4", "sym1", "sym3", "sym2", "sym2", "sym4", "sym4", "sym2", "sym6", "sym4", "sym1", "sym6", "sym1", "sym6", "sym4", "sym8"
+
+The program should display the randomly drawn stop positions (index starting from 0) and visible screen symbols in a nicely formatted way like such:
+
+    Stop Positions: 18, 9, 2, 0, 12
+    Screen:
+      sym7 sym4 sym7 sym2 sym6
+      sym2 sym7 sym8 sym6 sym4
+      sym2 sym2 sym3 sym3 sym1
+
+The second task of the assignment is to implement the winnings calculation for a "ways" slots game. In "ways" slots, all consecutive identical symbols starting on the first column form a winning combination. Winning combinations are left to right only. See below for some examples of winning and non winning stop positions and screens.
+
+Use the following pay table to calculate the winnings:
+
+     Symbol | 3 of a kind | 4 of a kind | 5 of a kind 
+    --------|-------------|-------------|-------------
+      sym1  |      1      |      2      |      3 
+    --------|-------------|-------------|-------------
+      sym2  |      1      |      2      |      3 
+    --------|-------------|-------------|-------------
+      sym3  |      1      |      2      |      5 
+    --------|-------------|-------------|-------------
+      sym4  |      2      |      5      |      10 
+    --------|-------------|-------------|-------------
+      sym5  |      5      |      10     |      15 
+    --------|-------------|-------------|-------------
+      sym6  |      5      |      10     |      15
+    --------|-------------|-------------|-------------
+      sym7  |      5      |      10     |      20
+    --------|-------------|-------------|-------------
+      sym8  |      10     |      20     |      50
+
+
+Winnings should first display the total wins then win details should be listed sequentially. 
+Each entry should display ways win with winning positions (index based), the symbol id, the number of matches and the payout. 
+
+Here is the index positions correspondance for the screen above:
+      sym7 sym4 sym7 sym2 sym6		 0	 1	 2	 3	 4
+      sym2 sym7 sym8 sym6 sym4		 5	 6	 7	 8	 9
+      sym2 sym2 sym3 sym3 sym1		10	11	12	13	14
+
+Here are a few samples of winning and non-winning results:
+
+    Stop Positions: 0, 11, 1, 10, 14
+    Screen:
+      sym2 sym2 sym2 sym5 sym1
+      sym7 sym5 sym7 sym1 sym6
+      sym7 sym7 sym8 sym6 sym1
+    Total wins: 11 
+    - Ways win 0-1-2, sym2 x3, 1
+    - Ways win 5-11-7, sym7 x3, 5
+    - Ways win 10-11-7, sym7 x3, 5
+
+    Stop Positions: 4, 6, 15, 21, 9
+    Screen:
+      sym1 sym8 sym2 sym4 sym4
+      sym5 sym5 sym4 sym1 sym4
+      sym1 sym5 sym1 sym5 sym2
+    Total wins: 0
+
+    Stop Positions: 9, 11, 14, 4, 9
+    Screen:
+      sym3 sym2 sym3 sym8 sym4
+      sym2 sym5 sym2 sym8 sym4
+      sym3 sym7 sym4 sym3 sym2
+    Total wins: 1
+    - Ways win 5-1-7, sym2 x3, 1
+
+    Stop Positions: 9, 16, 22, 14, 8
+    Screen:
+      sym3 sym6 sym4 sym6 sym2
+      sym2 sym8 sym4 sym7 sym4
+      sym3 sym7 sym8 sym2 sym4
+    Total wins: 0
+
+    Stop Positions: 2, 5, 9, 10, 12
+    Screen:
+      sym7 sym5 sym5 sym5 sym6
+      sym1 sym8 sym3 sym1 sym4
+      sym1 sym5 sym5 sym6 sym1
+    Total wins: 0
+
+    Stop Positions: 3, 4, 9, 23, 1
+    Screen:
+      sym1 sym5 sym5 sym5 sym8
+      sym1 sym5 sym3 sym7 sym2
+      sym5 sym8 sym5 sym2 sym3
+    Total wins: 40
+    - Ways win 10-1-2-3, sym5 x4, 10
+    - Ways win 10-1-12-3, sym5 x4, 10
+    - Ways win 10-6-2-3, sym5 x4, 10
+    - Ways win 10-6-12-3, sym5 x4, 10
+
+Assignment evaluation
+
+Your submission will be evaluated around 4 criterions. Each will be assigned a score over 5, for a maxium score of 20:
+
+- Correctness gives a score based on correctness of the results and absence of errors, if the submission does what the assignment asked for.
+
+- Readability & Style gives a score based on if the code is readable and well organized, follows best-practices and conventions.
+
+- Robustness & Efficiency gives a score based on if the code includes tests, is robust and cater for edge cases or simple updates of the math model.
+
+- General gives a score based on general presentation of the submission, whether a readme file is provided, commits have descriptive comments, and other more general topics.
