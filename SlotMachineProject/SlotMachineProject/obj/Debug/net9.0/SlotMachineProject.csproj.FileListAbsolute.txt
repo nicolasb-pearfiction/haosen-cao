@@ -1,0 +1,14 @@
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\SlotMachineProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\SlotMachineProject.AssemblyInfoInputs.cache
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\SlotMachineProject.AssemblyInfo.cs
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\SlotMachineProject.csproj.CoreCompileInputs.cache
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\bin\Debug\net9.0\SlotMachineProject.exe
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\bin\Debug\net9.0\SlotMachineProject.deps.json
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\bin\Debug\net9.0\SlotMachineProject.runtimeconfig.json
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\bin\Debug\net9.0\SlotMachineProject.dll
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\bin\Debug\net9.0\SlotMachineProject.pdb
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\SlotMachineProject.dll
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\refint\SlotMachineProject.dll
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\SlotMachineProject.pdb
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\SlotMachineProject.genruntimeconfig.cache
+C:\Users\ilost\OneDrive\桌面\SlotMachineProject\SlotMachineProject\obj\Debug\net9.0\ref\SlotMachineProject.dll
